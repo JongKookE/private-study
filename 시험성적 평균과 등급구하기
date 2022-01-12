@@ -1,0 +1,14 @@
+kor, eng, math = map(int, input().split())
+avr = (kor + math + eng)/3
+avr = round(avr, 2)
+if avr >= 90:
+   print(avr,"A")
+   if 90 > avr and avr >= 80 :
+      print(avr, "B")
+      if 80 > avr and avr >= 70:
+         print(avr, "C")
+      else:
+         print(avr, "F")
+         
+        
+ 소숫점때문인지 테스트케이스는 맞지않지만 대충 맞는거같음
