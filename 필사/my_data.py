@@ -26,6 +26,6 @@ def vis_Pclass_Fare(data):
 
 def corr_heatmap(for_test):
     sns.heatmap(for_test.corr(), annot = True, cmap="RdYlGn", linewidths = 0.2)
-    fig=plt.gcf()
+    fig=plt.gcf() 
     fig.set_size_inches(20,15)
     plt.show()
