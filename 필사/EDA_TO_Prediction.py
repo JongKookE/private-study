@@ -1,8 +1,13 @@
+from cv2 import DFT_COMPLEX_INPUT, DFT_INVERSE
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from IPython.display import display
 import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
 plt.style.use("fivethirtyeight")
+
 
 path = "/home/jongkook/jongkookE/data/titanic/"
 train = pd.read_csv(path+"train.csv")
@@ -89,4 +94,46 @@ ax[1].set_xticks(x1)
 
 
 sns.factorplot("Pclass", "Survived", col="Initial", data = train)
+#plt.show()
+
+print(pd.crosstab([train.Embarked, train.Pclass], [train.Sex, train.Survived], margins=True))
+
+sns.factorplot("Embarked", "Survived", data = train)
+plt.gcf().set_size_inches(5,3)
+
+f, ax = plt.subplots(2,2, figsize=(10,10))
+sns.countplot("Embarked", data = train, ax=ax[0,0])
+ax[0,0].set_title("Numer of Passangers Boarded")
+sns.countplot("Embarked", hue="Sex", data = train, ax=ax[0,1])
+ax[0,1].set_title("Male-Female split for Embarked")
+sns.countplot("Embarked", hue = "Survived", data = train, ax=ax[1,0])#Embarked, Survived, Pclass
+ax[1,0].set_title("Embarked VS Survived")
+sns.countplot("Embarked", hue="Pclass", data = train, ax=ax[1,1])
+ax[1,1].set_title("Embarked VS Pclass")
+
+sns.factorplot("Pclass", "Survived", hue="Embarked", col="Sex", data = train)
+#plt.show()
+
+train["Embarked"].fillna("S", inplace=True)
+
+SR = pd.crosstab(train.SibSp, train.Survived)
+print(SR)
+
+
+f,ax=plt.subplots(1,2,figsize=(10,8))
+sns.barplot('SibSp','Survived',data=train,ax=ax[0])
+ax[0].set_title('SibSp vs Survived')
+sns.factorplot('SibSp','Survived',data=train,ax=ax[1])
+ax[1].set_title('SibSp vs Survived')
+#plt.show()
+
+print(pd.crosstab(train.Parch, train.Pclass))
+
+
+f,ax=plt.subplots(1,2,figsize=(10,8))
+sns.barplot('Parch','Survived',data=train,ax=ax[0])
+ax[0].set_title('Parch vs Survived')
+sns.factorplot('Parch','Survived',data=train,ax=ax[1])
+ax[1].set_title('Parch vs Survived')
+plt.close(2)
 plt.show()
