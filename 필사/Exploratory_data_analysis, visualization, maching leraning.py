@@ -13,7 +13,7 @@ test = pd.read_csv("/home/jongkook/jongkookE/data/titanic/test.csv")
 #print(train.head())
 
 titanic_info = pd.DataFrame({"변수":["survival", "Pclass", "sex", "Age", "sibSp", "parch", "ticket", "fare"
-, "cabin", "embared"],
+, "cabin", "embarked"],
 "정의": ["생존여부", "티켓의 클래스", "성별", "나이", "함께 탑승한 형제와 배우자의 수", "함께 탑승한 부모, 아이의 수",
 "티켓 번호", "탑승료", "객실 번호", "탑승 항구"],
 "타입":["integer", "integer", "string", "integer", "integer", "integer", "string", "float", "string", "string"]
@@ -57,3 +57,5 @@ print(pd.crosstab(train["Pclass"], train["Survived"], margins = True))
 #sur = train[['Pclass', 'Survived']].groupby(['Pclass'], as_index=True).mean().sort_values(by='Survived', ascending=False).plot.bar()
 
 print(sns.factorplot("Pclass", "Survived", hue = "Sex", data=train, size = 6, aspect = 1.5))
+
+print(train.columns)

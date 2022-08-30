@@ -6,6 +6,10 @@ print('Highest Fare was:',data['Fare'].max())
 print('Lowest Fare was:',data['Fare'].min())
 print('Average Fare was:',data['Fare'].mean())
 
-my_data.vis_Pclass_Fare(data)
+#my_data.vis_Pclass_Fare(data)
 
-my_data.corr_heatmap(data)
+#my_data.corr_heatmap(data)
+
+my_data.data_anal(data)
+
+print(data.columns)
