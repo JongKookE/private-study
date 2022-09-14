@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+ 
+<h2>HTML Forms</h2>
+ 
+<form action="#이동할곳 URL#" name="login_form">
+  <label for="fname">ID:</label><br>
+  <input type="text" id="id_val" name="id_val" placeholder="아이디"><br>
+  <!-- input 박스 안 글자 넣기 = placeholder -->
+  <label for="lname">Password:</label><br>
+  <input type="password" id="pw_val" name="pw_val" placeholder="비밀번호"><br><br>
+  <input type="button" value="로그인" onclick="check_input()">
+</form>
+<script type="text/javascript">
+function check_input() {
+    if (!document.login_form.id_val.value)
+    // login_form 이름을 가진 form 안의 id_val 의 value가 없으면
+    {
+        alert("아이디를 입력하세요!");
+        document.login_form.id_val.focus();
+        // 화면 커서 이동
+        return;
+    }
+    if (!document.login_form.pw_val.value)
+    {
+        alert("비밀번호를 입력하세요!");
+        // 화면 커서 이동
+        return;
+    }
+    document.login_form.submit();
+    // 모두 확인 후 submit()
+ }
+</script>
+</body>
+</html>
