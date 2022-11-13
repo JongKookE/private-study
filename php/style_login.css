@@ -1,0 +1,40 @@
+.popup{
+    width:500px;
+    height:200px;
+    padding-top:10px;
+    padding-bottom:0px;
+    border: 1px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input[type = "submit"]{
+    background-color: #174ea6; 
+    text-align: center; 
+    color: aliceblue;
+    margin-left: 45px;
+    width : 100px;
+    height : 50px;
+    border:1px;
+}
+input[name="login_id"]{
+    height: 20px;
+    width : 400px;
+}
+input[name="login_password"]{
+    width : 400px;
+    height : 20px;
+}
+input[type = "button"]{
+    background-color: #174ea6; 
+    text-align: center; 
+    color: aliceblue;
+    margin-left: 45px;
+    width : 100px;
+    height : 50px;
+    border:1px;
+}
+.hover_btn:hover{
+    background: #11346b;
+}

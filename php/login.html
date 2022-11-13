@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style_login.css">
+    <title>php 로그인 화면</title>
+</head>
+<body>
+    <div style = "text-align: center;">
+        <img name = "logo" src="img\resize_logo.jpg" alt="">
+    </div>
+    <form name = "login_form" method = "POST" action = "login_test.php">
+        <div class = "popup">
+            <p>아이디 &nbsp;&nbsp;
+            <input type = "text" class = "sign" name = "login_id"></p><br>
+            <p>비밀번호
+            <input type = "password" class = "sign" name = "login_password" ></p>
+            <input type = "button" class = "hover_btn" name = "sign_up" value = "회원가입">
+            <input type = "button" class = "hover_btn" name = "find_id" value = "아이디 찾기">
+            <input type = "submit" class = "hover_btn" name = "login_btn" value = "로그인">
+            <script src = "null_check.js" ></script>
+        </div>
+    </form>
+</body>
+</html>
