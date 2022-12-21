@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Square Game</h1>
+    <canvas id="game-canvas" width="1000px" height="1000px"></canvas>
+</body>
+<script>
+    // Get a reference to the canvas element
+    const canvas = document.getElementById('game-canvas');
+    const context = canvas.getContext('2d');
+  
+    // Create an object to represent the square
+    const square = {
+      x: 0,
+      y: 0,
+      size: 50,
+      speed: 5,
+    };
+  
+    // Function to move the square based on user input
+    function moveSquare(event) {
+      // Check which key was pressed and update the square's position
+      if (event.key === 'ArrowUp') {
+        square.y -= square.speed;
+      } else if (event.key === 'ArrowDown') {
+        square.y += square.speed;
+      } else if (event.key === 'ArrowLeft') {
+        square.x -= square.speed;
+      } else if (event.key === 'ArrowRight') {
+        square.x += square.speed;
+      }
+    }
+  
+    // Function to draw the square on the canvas
+    function drawSquare() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.fillStyle = '#00FF00';
+      context.fillRect(square.x, square.y, square.size, square.size);
+    }
+  
+    // Add event listeners to move the square when the arrow keys are pressed
+    document.addEventListener('keydown', moveSquare);
+  
+    // Call the drawSquare function every 10 milliseconds to update the square's position on the canvas
+    setInterval(drawSquare, 10);
+  </script>
+</html>

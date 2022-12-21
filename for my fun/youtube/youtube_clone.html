@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #page-container {
+          width: 960px;
+          margin: 0 auto;
+        }
+        #header {
+          text-align: center;
+        }
+        #video-player {
+          width: 640px;
+          margin: 0 auto;
+        }
+        #video-thumbnails {
+          display: flex;
+          justify-content: space-between;
+        }
+        .video-thumbnail {
+          width: 30%;
+        }
+        .video-thumbnail img {
+          width: 100%;
+        }
+      </style>
+</head>
+<body>
+    <div id="page-container">
+        <div id="header">
+          <h1>YouTube Clone</h1>
+          <form>
+            <input type="text" placeholder="Search for videos">
+            <button type="submit">Search</button>
+          </form>
+        </div>
+        <div id="video-player">
+          <video src="https://example.com/video.mp4" controls></video>
+        </div>
+        <div id="video-thumbnails">
+          <h2>Recommended Videos</h2>
+          <div class="video-thumbnail">
+            <img src="https://example.com/thumbnail1.jpg" alt="Thumbnail 1">
+            <h3>Video Title 1</h3>
+          </div>
+          <div class="video-thumbnail">
+            <img src="https://example.com/thumbnail2.jpg" alt="Thumbnail 2">
+            <h3>Video Title 2</h3>
+          </div>
+          <!-- Add additional video thumbnails here -->
+        </div>
+      </div>
+</body>
+</html>
