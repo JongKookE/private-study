@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src = "https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src = "https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type = "text/babel">
+    const root = document.getElementById("root");
+    //onMouseEnter같은 이벤트리스너의 대소문자 구별 중요
+    function Title(){ //JSX에서 function을 선언하는 두가지 방법 return을 반드시 해줘야 함
+        return <h3 id = "title" onMouseEnter = {()=> console.log("Mouse Enter")}>I'm a Title</h3>;
+    }
+    const JSX_button = () => //Arrow function 선언법
+        <button id = "JSX_button" onClick = {() => console.log("JSX Clicked!!")}
+            >click me!</button>;
+    const Container= () => <div>
+        <Title/> 
+        <JSX_button/> 
+        button
+        </div> //컴포넌트의 첫번째는 무조건 대문자로 해야됨 안그렇다면 HTML태그로 인식함
+    ReactDOM.render(<Container/>,root); //render는 유저에게 보여준다는걸 말함
+</script>
+</html>
