@@ -1,5 +1,9 @@
 body{
     background-color: beige;
+    background-image: url("https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 .hidden{
     display:none;
@@ -8,7 +12,7 @@ body{
     width: 8px;
     height:8px;
     border-radius: 50%;
-    background-color: rgb(99, 23, 23);
+    background-color: white;
     position : absolute;
     top : -8px;
     /* animation : fall 10s linear; */
@@ -19,4 +23,21 @@ body{
         transform: translateY(100vh);
         opacity: 0;
     }
+}
+#login-form{
+    text-align:center;
+}
+#greeting{
+    text-align:center;
+}
+#weather{
+    text-align:right;
+}
+#write_enter{
+    left: 87%;
+    position : relative;
+}
+#todo-list{
+    left: 90%;
+    position : relative;
 }
