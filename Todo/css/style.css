@@ -38,6 +38,9 @@ body{
     position : relative;
 }
 #todo-list{
-    left: 90%;
+    left: 85%;
     position : relative;
+}
+#quote{
+    text-align:center;
 }
